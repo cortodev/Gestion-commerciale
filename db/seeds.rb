@@ -37,7 +37,7 @@ end
 
 Produit.all.each do |produit|
   Agence.all.each do |agence|
-    s = stock.create( { quantite_disponible: 50, date_fabrication: Time.now } )
+    s = Stock.create( { quantite_disponible: 50, date_fabrication: Time.now } )
     s.produit = produit
     s.agence = agence
   end
