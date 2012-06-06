@@ -4,5 +4,6 @@ class Client < ActiveRecord::Base
   belongs_to :adresse
   has_many   :contact_clients
   has_many   :commandes, through: :contact_clients
-  has_many   :remise
+  has_many   :promotions, as: :promotionable
+  has_many   :ristournes
 end

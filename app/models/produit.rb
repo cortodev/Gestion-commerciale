@@ -13,5 +13,8 @@ class Produit < ActiveRecord::Base
 
   belongs_to :lieu_fabrication, class_name: "Adresse"
 
-  has_many :ligne_commande
+  has_many :ligne_commandes
+
+  has_many :promotions
+  has_many :ristournes
 end
