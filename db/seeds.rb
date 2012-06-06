@@ -43,33 +43,33 @@ Produit.all.each do |produit|
   end
 end
 
-Client.create[
+Client.create [
   { raison_sociale: "Restaurant Les Grands Ducs" },
   { raison_sociale: "Sanofis Traiteur SARL", site_web: "www.sanofis.com" }
 ]
 
-ContactClient.create[
+ContactClient.create [
   { email: "marcel.durand-lesgrandsducs@yahoo.com", prenom: "Marcel", nom: "Durand", telephone: "0147869090", position: "Responsable des achats" },
   { email: "charlotte.legrand@sanofis-traiteur.com", nom: "Legrand", prenom: "Charlotte", telephone: "0652831780", position: "Directrice commerciale" }
 ]
 
 ducs = Client.find_by_raison_sociale( "Restaurant Les Grands Ducs" )
 ducs.adresse = Adresse.where( destinataire: "Restaurant Les Grands Ducs" ).first
-ducs.ristournes.create[
+ducs.ristournes.create [
   { ca_min: 45000, ca_max: 90000, valeur: 3 },
   { ca_min: 90000, valeur: 5 }
 ]
-durand = Utilisateur.find_by_nomd "Durand"
+durand = Utilisateur.find_by_nom "Durand"
 durand.adresse = ducs.adresse
 durand.client = ducs
 
-sanofis = Client.find_by_raison_sociale( "Sanofis Traiteur SARL" )
-sanofis.adresse = Adresse.where( destinataire: "Societe Sanofis" ).first
-sanofis.ristournes.create[
+sanofis = Client.find_by_raison_sociale "Sanofis Traiteur SARL"
+sanofis.adresse = Adresse.find_by_destinataire "Societe Sanofis"
+sanofis.ristournes.create [
   { ca_min: 30000, ca_max: 50000, valeur: 2 },
   { ca_min: 50000, ca_max: 90000, valeur: 4.5 },
   { ca_min: 90000, valeur: 7.3 }
 ]
 legrand = Utilisateur.find_by_nom "Legrand"
-legrand.adresse = Adresse.where( destinataire: "Traiteur Sanofis Paris" ).first
+legrand.adresse = Adresse.find_by_destinataire "Traiteur Sanofis Paris"
 legrand.client = sanofis

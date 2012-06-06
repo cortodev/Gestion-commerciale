@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606204107) do
+ActiveRecord::Schema.define(:version => 20120606211837) do
 
   create_table "adresses", :force => true do |t|
     t.string   "destinataire"
@@ -137,6 +137,7 @@ ActiveRecord::Schema.define(:version => 20120606204107) do
     t.integer  "client_id"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
+    t.string   "position"
   end
 
   add_index "utilisateurs", ["client_id"], :name => "index_utilisateurs_on_client_id"
