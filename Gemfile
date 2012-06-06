@@ -20,6 +20,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  # For generating class diagram from models
+
+  gem 'rails-erd'
+end
+
 gem 'jquery-rails'
 gem 'squeel'
 

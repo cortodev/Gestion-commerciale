@@ -1,4 +1,4 @@
-class CompositionLot
+class CompositionLot < ActiveRecord::Base
   attr_accessible :quantite
 
   belongs_to :lot
