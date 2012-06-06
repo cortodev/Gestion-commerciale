@@ -1,9 +1,9 @@
 class CreateLigneCommandes < ActiveRecord::Migration
   def change
     create_table :ligne_commandes do |t|
+      t.integer :quantite
       t.references :produit
       t.references :commande
-      t.integer :quantite
 
       t.timestamps
     end

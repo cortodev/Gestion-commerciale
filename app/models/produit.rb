@@ -10,6 +10,6 @@ class Produit < ActiveRecord::Base
 
   has_many :stocks
   has_many :agences, through: :stocks
-  has_one :lieu_fabrication, as: :localisable, class_name: "Adresse"
+  belongs_to :lieu_fabrication, class_name: "Adresse"
   has_many :ligne_commande
 end
