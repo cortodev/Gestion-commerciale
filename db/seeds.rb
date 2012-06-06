@@ -24,8 +24,8 @@ Agence.create [
   { nom: "Agence lyonnaise" }
 ]
 
-Agence.find_by_nom( "Agence parisienne" ).adresse = Adresse.where( destinataire: "Societe Canard Dodu" ).first
-Agence.find_by_nom( "Agence lyonnaise" ).adresse = Adresse.where( destinataire: "Agence Canard Dodu" ).first
+Agence.find_by_nom( "Agence parisienne" ).adresse = Adresse.find_by_destinataire "Societe Canard Dodu"
+Agence.find_by_nom( "Agence lyonnaise" ).adresse = Adresse.find_by_destinataire "Agence Canard Dodu"
 
 Produit.where{ nom.like 'amuse%' }.each do |amuse_gueule|
   Lot.create( { ref_produit: amuse_gueule.ref, quantite: 2, ref_lot: "AG100" } )
@@ -48,15 +48,28 @@ Client.create[
   { raison_sociale: "Sanofis Traiteur SARL", site_web: "www.sanofis.com" }
 ]
 
-Client.find_by_raison_sociale( "Restaurant Les Grands Ducs" ).adresse = Adresse.where( destinataire: "Restaurant Les Grands Ducs" ).first
-Client.find_by_raison_sociale( "Sanofis Traiteur SARL" ).adresse = Adresse.where( destinataire: "Societe Sanofis" ).first
-
 ContactClient.create[
   { email: "marcel.durand-lesgrandsducs@yahoo.com", prenom: "Marcel", nom: "Durand", telephone: "0147869090", position: "Responsable des achats" },
   { email: "charlotte.legrand@sanofis-traiteur.com", nom: "Legrand", prenom: "Charlotte", telephone: "0652831780", position: "Directrice commerciale" }
 ]
 
-Utilisateur.find_by_nom( "Durand" ).adresse = Adresse.where( destinataire: "Restaurant Les Grands Ducs" ).first
-Utilisateur.find_by_nom( "Durand" ).client = Client.where( raison_sociale: "Restaurant Les Grands Ducs" ).first
-Utilisateur.find_by_nom( "Legrand" ).adresse = Adresse.where( destinataire: "Traiteur Sanofis Paris" ).first
-Utilisateur.find_by_nom( "Legrand" ).client = Client.where( raison_sociale: "Sanofis Traiteur SARL" ).first
+ducs = Client.find_by_raison_sociale( "Restaurant Les Grands Ducs" )
+ducs.adresse = Adresse.where( destinataire: "Restaurant Les Grands Ducs" ).first
+ducs.ristournes.create[
+  { ca_min: 45000, ca_max: 90000, valeur: 3 },
+  { ca_min: 90000, valeur: 5 }
+]
+durand = Utilisateur.find_by_nomd "Durand"
+durand.adresse = ducs.adresse
+durand.client = ducs
+
+sanofis = Client.find_by_raison_sociale( "Sanofis Traiteur SARL" )
+sanofis.adresse = Adresse.where( destinataire: "Societe Sanofis" ).first
+sanofis.ristournes.create[
+  { ca_min: 30000, ca_max: 50000, valeur: 2 },
+  { ca_min: 50000, ca_max: 90000, valeur: 4.5 },
+  { ca_min: 90000, valeur: 7.3 }
+]
+legrand = Utilisateur.find_by_nom "Legrand"
+legrand.adresse = Adresse.where( destinataire: "Traiteur Sanofis Paris" ).first
+legrand.client = sanofis
