@@ -11,7 +11,7 @@ class Produit < ActiveRecord::Base
   has_many :stocks
   has_many :agences, through: :stocks
 
-  belongs_to :lieu_fabrication, class_name: "Adresse"
+  has_one :adresse, as: :localisable
 
   has_many :ligne_commandes
 

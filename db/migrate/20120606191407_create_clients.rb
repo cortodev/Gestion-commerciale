@@ -8,10 +8,8 @@ class CreateClients < ActiveRecord::Migration
       t.string :siren
       t.string :site_web
       t.text :commentaires
-      t.references :adresse
 
       t.timestamps
     end
-    add_index :produits, :adresse_id
   end
 end
