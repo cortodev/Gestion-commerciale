@@ -1,4 +1,8 @@
 class Agence < ActiveRecord::Base
-  belongs_to :adresse
   attr_accessible :nom
+
+  belongs_to :adresse
+
+  has_many :stocks
+  has_many :produits, through: :stocks
 end

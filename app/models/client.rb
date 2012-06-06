@@ -3,6 +3,6 @@ class Client < ActiveRecord::Base
 
   belongs_to :adresse
   has_many   :contact_clients
-  has_many   :commandes, through: :contact_client
+  has_many   :commandes, through: :contact_clients
   has_many   :remise
 end
