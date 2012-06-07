@@ -1,6 +1,21 @@
 GestionCommerciale::Application.routes.draw do
-  resources :noms
+  root to: 'agences#index'
 
+  #une agence a une seule adresse
+  #un produit est produit a un seul endroit
+  #une entreprise/client a un siege social/residence principale
+  %w( agences produits clients ).each do |class_name|
+    resources class_name.to_sym do
+      resource :adresse
+    end
+  end
+
+  %w(utilisateurs contact_clients commerciaux ).each do |class_name|
+    resources class_name.to_sym, controller: :utilistateurs do
+      resources :adresses
+    end
+  end
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

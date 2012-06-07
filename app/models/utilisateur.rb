@@ -1,8 +1,7 @@
 class Utilisateur < ActiveRecord::Base
   has_secure_password
 
-  attr_accessible :email, :nom, :prenom, :telephone, :roles_mask, :position
+  attr_accessible :email, :nom, :prenom, :telephone, :roles_mask, :position, :password, :password_confirmation
 
-  belongs_to :adresse
-  has_one :adresse, as: :localisable
+  has_many :adresses, as: :localisable
 end
