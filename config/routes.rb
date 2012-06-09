@@ -1,4 +1,8 @@
 GestionCommerciale::Application.routes.draw do
+  resources :employes
+
+  get "sessions/new"
+
   root to: 'agences#index'
 
   #une agence a une seule adresse

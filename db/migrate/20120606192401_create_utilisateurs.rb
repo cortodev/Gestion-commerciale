@@ -7,13 +7,12 @@ class CreateUtilisateurs < ActiveRecord::Migration
       t.string :email
       t.string :telephone
       t.string :type
-      t.references :commercial
       t.references :client
+      t.references :commercial
 
       t.timestamps
     end
-
-    add_index :utilisateurs, :commercial_id
     add_index :utilisateurs, :client_id
+    add_index :utilisateurs, :commercial_id
   end
 end

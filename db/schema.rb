@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120607154956) do
+ActiveRecord::Schema.define(:version => 20120609131642) do
 
   create_table "adresses", :force => true do |t|
     t.string   "destinataire"
@@ -54,6 +54,29 @@ ActiveRecord::Schema.define(:version => 20120607154956) do
   end
 
   add_index "commandes", ["contact_client_id"], :name => "index_commandes_on_contact_client_id"
+
+  create_table "contact_clients", :id => false, :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "commercial_id"
+    t.integer  "utilisateur_id"
+    t.datetime "date_dernier_contact"
+  end
+
+  add_index "contact_clients", ["client_id"], :name => "index_contact_clients_on_client_id"
+  add_index "contact_clients", ["commercial_id"], :name => "index_contact_clients_on_commercial_id"
+  add_index "contact_clients", ["utilisateur_id"], :name => "index_contact_clients_on_utilisateur_id", :unique => true
+
+  create_table "employes", :id => false, :force => true do |t|
+    t.float    "salaire"
+    t.string   "type_contrat"
+    t.string   "type"
+    t.datetime "date_embauche"
+    t.integer  "agence_id"
+    t.integer  "utilisateur_id"
+  end
+
+  add_index "employes", ["agence_id"], :name => "index_employes_on_agence_id"
+  add_index "employes", ["utilisateur_id"], :name => "index_employes_on_utilisateur_id", :unique => true
 
   create_table "ligne_commandes", :force => true do |t|
     t.integer  "quantite"
@@ -132,17 +155,11 @@ ActiveRecord::Schema.define(:version => 20120607154956) do
     t.string   "prenom"
     t.string   "email"
     t.string   "telephone"
-    t.string   "type"
-    t.integer  "commercial_id"
-    t.integer  "client_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
     t.string   "position"
     t.string   "password_digest"
     t.datetime "date_contact"
   end
-
-  add_index "utilisateurs", ["client_id"], :name => "index_utilisateurs_on_client_id"
-  add_index "utilisateurs", ["commercial_id"], :name => "index_utilisateurs_on_commercial_id"
 
 end
