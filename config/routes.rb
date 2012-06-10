@@ -14,11 +14,15 @@ GestionCommerciale::Application.routes.draw do
     end
   end
 
-  %w(utilisateurs contact_clients commerciaux ).each do |class_name|
-    resources class_name.to_sym, controller: :utilistateurs do
+  %w(contact_clients commerciaux ).each do |class_name|
+    resources class_name.to_sym do
       resources :adresses
     end
   end
+
+  get 'inscription', to: 'utilisateurs#new', as: 'inscription'
+  get 'connexion', to: 'sessions#new', as: 'connexion'
+  get 'deconnexion', to: 'sessions#destroy', as: 'deconnexion'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

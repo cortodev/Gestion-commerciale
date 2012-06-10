@@ -1,0 +1,7 @@
+<h2><%=@contact_client.full_name%></h2>
+<p><%=@contact_client.telephone%></p>
+<%@contact_client.adresses.each do |adresse|%>
+  <p><%=adresse.full_adresse%></p>
+<%end%>
+<p><%=@contact_client.email%></p>
+<%=link_to "X", @contact_client, confirm: "Etes vous sur ?", method: :delete%>
