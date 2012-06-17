@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.3'
+gem 'rails', '3.2.6'
 
 gem 'pg'
 
@@ -13,12 +13,7 @@ group :assets do
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platform => :ruby
   gem 'uglifier', '>= 1.0.3'
-end
-
-group :development do
-  # To generate class diagram from models
-  gem 'erd'
-  gem 'rails-erd'
+  gem 'bootstrap-sass-rails', '~> 2.0.3'
 end
 
 group :test do
@@ -44,3 +39,7 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
+
+gem 'simple_form'
+gem 'twitter-bootstrap-rails'
+gem 'inherited_resources'

@@ -1,0 +1,40 @@
+<%- model_class = Produit.new.class -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:ref) %></th>
+      <th><%= model_class.human_attribute_name(:nom) %></th>
+      <th><%= model_class.human_attribute_name(:tva) %></th>
+      <th><%= model_class.human_attribute_name(:puht) %></th>
+      <th><%= model_class.human_attribute_name(:quantite) %></th>
+      <th><%= model_class.human_attribute_name(:duree_conservation) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @produits.each do |produit| %>
+      <tr>
+            <td><%= produit.ref %></td>
+            <td><%= produit.nom %></td>
+            <td><%= produit.tva %></td>
+            <td><%= produit.puht %></td>
+            <td><%= produit.quantite %></td>
+            <td><%= produit.duree_conservation %></td>
+            <td>
+              <span class="btn-group">
+                <%=link_to "Details", produit, class: 'btn btn-mini btn-info'%>
+                <%=link_to "Editer", edit_produit_path(produit), class: 'btn btn-mini'%>
+                <%=link_to "Supprimer", produit, class: 'btn btn-mini btn-danger', method: :delete, data: { confirm: "Voulez-vous vraiment supprimer #{produit.nom} ?" }%>
+              </span>
+            </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+  new_produit_path,
+  :class => 'btn btn-primary' %>
