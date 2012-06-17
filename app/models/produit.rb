@@ -17,4 +17,10 @@ class Produit < ActiveRecord::Base
 
   has_many :promotions
   has_many :ristournes
+
+  validates_uniqueness_of :ref, :nom, message: "Ce produit existe deja"
+  validates_presence_of :ref, :nom, :tva, :puht, :quantite, :unite, :duree_conservation, message: "Doit etre renseigne"
+  validates_inclusion_of :tva, in: [5.5, 19.7]
+  validates_inclusion_of :unite, in: %w(gr L pieces)
+  validates_numericality_of :quantite, :duree_conservation, :puht, greater_than_or_egal_to: 0, message: "Doit etre positif"
 end

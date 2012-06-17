@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120617122005) do
+ActiveRecord::Schema.define(:version => 20120617171003) do
 
   create_table "adresses", :force => true do |t|
     t.string   "destinataire"
@@ -100,13 +100,13 @@ ActiveRecord::Schema.define(:version => 20120617122005) do
   create_table "produits", :force => true do |t|
     t.string   "ref"
     t.string   "nom"
-    t.string   "tva"
     t.float    "puht"
     t.integer  "quantite",           :default => 1
     t.integer  "duree_conservation"
     t.string   "unite"
     t.datetime "created_at",                        :null => false
     t.datetime "updated_at",                        :null => false
+    t.float    "tva"
   end
 
   create_table "promotions", :force => true do |t|

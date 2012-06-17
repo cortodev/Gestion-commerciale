@@ -1,11 +1,11 @@
-<%= simple_form_for @produit, :html => { :class => 'form-horizontal' } do |f| %>
+<%= extended_simple_form_for @produit, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :ref %>
   <%= f.input :nom %>
   <%= f.input :tva %>
   <%= f.input :puht %>
   <%= f.input :quantite %>
-  <%= f.input :duree_conservation %>
   <%= f.input :unite %>
+  <%= f.input :duree_conservation %>
   <div class="form-actions">
     <%= f.button :submit, :class => 'btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
