@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120609131642) do
+ActiveRecord::Schema.define(:version => 20120617122005) do
 
   create_table "adresses", :force => true do |t|
     t.string   "destinataire"
@@ -71,11 +71,9 @@ ActiveRecord::Schema.define(:version => 20120609131642) do
     t.string   "type_contrat"
     t.string   "type"
     t.datetime "date_embauche"
-    t.integer  "agence_id"
     t.integer  "utilisateur_id"
   end
 
-  add_index "employes", ["agence_id"], :name => "index_employes_on_agence_id"
   add_index "employes", ["utilisateur_id"], :name => "index_employes_on_utilisateur_id", :unique => true
 
   create_table "ligne_commandes", :force => true do |t|
@@ -160,6 +158,9 @@ ActiveRecord::Schema.define(:version => 20120609131642) do
     t.string   "position"
     t.string   "password_digest"
     t.datetime "date_contact"
+    t.integer  "agence_id"
   end
+
+  add_index "utilisateurs", ["agence_id"], :name => "index_utilisateurs_on_agence_id"
 
 end

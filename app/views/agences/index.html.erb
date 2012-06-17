@@ -1,20 +1,12 @@
 <h1>Listing agences</h1>
 
-<table>
-  <tr>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @agences.each do |agence| %>
-  <tr>
-    <td><%= link_to 'Show', agence %></td>
-    <td><%= link_to 'Edit', edit_agence_path(agence) %></td>
-    <td><%= link_to 'Destroy', agence, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+    <%= link_to agence.nom, agence %>
+    <%= link_to 'Edit', edit_agence_path(agence) %>
+    <%= link_to 'Destroy', agence, confirm: 'Are you sure?', method: :delete %>
+    <br />
 <% end %>
-</table>
 
 <br />
 

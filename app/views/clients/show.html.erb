@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%=@client.raison_sociale%>
+<%=@client.categorie_juridique%>
+<%=link_to_unless @client.site_web.nil?, @client.site_web%>
+<%@client.promotions.each do |prom|%>
+  <%=prom%>
+<%end%>
 
 <%= link_to 'Edit', edit_client_path(@client) %> |
 <%= link_to 'Back', clients_path %>

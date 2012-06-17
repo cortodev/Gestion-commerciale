@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+
+<title>module MultipleTableInheritance - Rails Application Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/multiple_table_inheritance.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-acts_as">#acts_as</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Adresse.html">Adresse</a>
+  
+    <li><a href="./Agence.html">Agence</a>
+  
+    <li><a href="./AgencesController.html">AgencesController</a>
+  
+    <li><a href="./AgencesHelper.html">AgencesHelper</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./Client.html">Client</a>
+  
+    <li><a href="./ClientsController.html">ClientsController</a>
+  
+    <li><a href="./ClientsHelper.html">ClientsHelper</a>
+  
+    <li><a href="./Commande.html">Commande</a>
+  
+    <li><a href="./Commercial.html">Commercial</a>
+  
+    <li><a href="./ContactClient.html">ContactClient</a>
+  
+    <li><a href="./ContactClientsController.html">ContactClientsController</a>
+  
+    <li><a href="./ContactClientsHelper.html">ContactClientsHelper</a>
+  
+    <li><a href="./Employe.html">Employe</a>
+  
+    <li><a href="./EmployesController.html">EmployesController</a>
+  
+    <li><a href="./EmployesHelper.html">EmployesHelper</a>
+  
+    <li><a href="./LigneCommande.html">LigneCommande</a>
+  
+    <li><a href="./Lot.html">Lot</a>
+  
+    <li><a href="./MultipleTableInheritance.html">MultipleTableInheritance</a>
+  
+    <li><a href="./Produit.html">Produit</a>
+  
+    <li><a href="./Promotion.html">Promotion</a>
+  
+    <li><a href="./Ristourne.html">Ristourne</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./Stock.html">Stock</a>
+  
+    <li><a href="./Utilisateur.html">Utilisateur</a>
+  
+    <li><a href="./UtilisateursController.html">UtilisateursController</a>
+  
+    <li><a href="./UtilisateursHelper.html">UtilisateursHelper</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module MultipleTableInheritance</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-acts_as" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">acts_as</span><span
+            class="method-args">(class_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="acts_as-source">
+            <pre><span class="ruby-comment"># File lib/multiple_table_inheritance.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">acts_as</span> <span class="ruby-identifier">class_name</span>
+  <span class="ruby-identifier">belongs_to</span> <span class="ruby-identifier">class_name</span>
+
+  <span class="ruby-identifier">@@inherited_class_name</span> = <span class="ruby-identifier">class_name</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">primary_key</span> = ( <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">underscore</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;_id&quot;</span> ).<span class="ruby-identifier">to_sym</span>
+
+  <span class="ruby-identifier">define_method</span> <span class="ruby-value">:inherited_association</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">send</span> <span class="ruby-identifier">@@inherited_class_name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:old_save</span>, <span class="ruby-value">:save</span>
+
+  <span class="ruby-identifier">define_method</span> <span class="ruby-value">:save</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">inherited_association</span>.<span class="ruby-identifier">save!</span>
+    <span class="ruby-identifier">old_save</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">define_method</span> <span class="ruby-value">:method_missing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">inherited_association</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">inherited_association</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">method</span>, <span class="ruby-identifier">args</span>  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">inherited_association</span>.<span class="ruby-identifier">send</span> <span class="ruby-identifier">method</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- acts_as-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- acts_as-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
