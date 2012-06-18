@@ -23,4 +23,16 @@ class Produit < ActiveRecord::Base
   validates_inclusion_of :tva, in: [5.5, 19.7]
   validates_inclusion_of :unite, in: %w(gr L pieces)
   validates_numericality_of :quantite, :duree_conservation, :puht, greater_than_or_egal_to: 0, message: "Doit etre positif"
+
+  before_validation :set_default_tva, :set_default_unite
+
+  private
+
+  def set_default_tva
+    tva = 19.7 if tva.nil?
+  end
+
+  def set_default_unite
+    unite = "pieces" if unite.nil?
+  end
 end
